@@ -107,7 +107,9 @@ function returnItem(item){
 
 returnItem is a pointless function. but bear with me.
 
-```returnItem(2);```
+```
+returnItem(2);
+```
 
 returnItem's Big(O) is constant time. No matter what we pass to returnItem, the algorithm will go through one unit of work.
 
@@ -135,7 +137,9 @@ function itemInList(check, list){
 
 This will run pretty quick:
 
-```itemInList(2, [1,2,3]);```
+```
+itemInList(2, [1,2,3]);
+```
 
 The "complexity" of itemInList is O(n)
 
