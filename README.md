@@ -109,7 +109,7 @@ returnItem is a pointless function. but bear with me.
 
 ```returnItem(2);```
 
-returnItem's Big(O) is constant time. No matter what we pass to returnItem, the algorithm will go through one iteration.
+returnItem's Big(O) is constant time. No matter what we pass to returnItem, the algorithm will go through one unit of work.
 
 The "complexity" of this function is O(1).
 
@@ -141,9 +141,9 @@ The "complexity" of itemInList is O(n)
 
 This means that it's a linear graph
 
-For itemInList, if the length of the array is 3, **worst case** it'll take 3 iterations.
+For itemInList, if the length of the array is 3, **worst case** it'll take 3 units of work.
 
-Sure, in the best case it'll take 1 iteration, but Big O Notation isn't about the best case scenario, it's about the **worst case scenario**.
+Sure, in the best case it'll take 1 unit of work, but Big O Notation isn't about the best case scenario, it's about the **worst case scenario**.
 
 If you want to graph O(n) then you would replace the n with a x and set it equal to a y.
 
@@ -173,8 +173,8 @@ The "complexity" of allCombos is O(n^2)
 
 The list argument of allCombos is the n in O(n^2)
 
-allCombos([1]) -> [[1,1]]. One iteration.  1^2 = 1
-allCombos([1,2]) -> [[1,1], [1,2], [2,1], [2,2]]. Four iterations. 2^2 = 4
+allCombos([1]) -> [[1,1]]. One unit of work.  1^2 = 1
+allCombos([1,2]) -> [[1,1], [1,2], [2,1], [2,2]]. Four units of work. 2^2 = 4
 
 So n * n is n^2.
 
@@ -187,32 +187,122 @@ This means that O(n^2) runs slower than O(n), which runs slower than O(1).
 ![comparison](runtime_comparison.png)
 
 
+## Dive into O(log(n))
+
+O(1) < O(n) < O(log(n)) < O(n^2)
+
+###### What does an algorithm look like that has a Big O of O(log(n))?
+
+The choice of the next element on which to perform some action is one of several possibilities, and only one will need to be chosen.
+
+###### Ex. Looking up people in a phone book is O(log(n))
+
+You don't need to check every person in the phone book to find the right one; instead, you can simply divide-and-conquer, and you only need to explore a tiny fraction of the entire space before you eventually find someone's phone number.
+
+Of course, a bigger phone book will still take you a longer time, but it won't grow as quickly as the proportional increase in the additional size.
+
+###### Ex. an algorithm that has a Big O of O(log(n))
+
+```
+function logn(x){
+	while (x > 0) x/=2;
+	return x;
+}
+```
+
+Iteration |   x
+----------|--------
+    0     |  x (this is the same thing as x/1)
+    1     |  x/2
+    2     |  x/4
+   ...    |  ...
+   ...    |  ...
+    k     |  x/2^k 
+
+2^k = x → Applying log to both sides → k = log(x)
+
+log(2^k) = log(x)
+
+k*log(2) = log(x)
+
+k = log(x)/log(2)
+
+k approximately equals log(x)
+
+![o(log n)](o_logn.gif)
+
+
+###### Another example of O(log n)
+```
+function lognAgain(n){
+	int count = 0; 
+	int i = n; 
+	while (i > 1){
+	    count++; 
+	    i = i / 2; 
+	}
+	return i;
+}
+```
+
+## How to calculate Big O?
+
+Often you don't need math to figure out what the Big-O of an algorithm is but you can simply use your intuition. 
+
+If your code uses a single loop that looks at all n elements of your input, the algorithm is O(n). 
+
+If the code has two nested loops, it is O(n^2).
+
+Three nested loops gives O(n^3), and so on.
+
+## Big O can be misleading
+
+Big-O notation is an estimate and is only useful for large values of n. 
+
+###### insertion sort vs merge sort
+
+The worst-case running time for the **insertion sort algorithm is O(n^2)**. 
+
+Relative to Big O that is worse than the running time for **merge sort, which is O(n log n)**. 
+
+But for small amounts of data (when n is small), insertion sort is actually faster, especially if the array is partially sorted already!
+
+Big O is useful when comparing two algorithms to figure out which one runs faster for when n is large.
+
+If the amount of data (n) is relatively small, then even a slow algorithm will be fast enough for practical use.
+
 ## Other Big O Categories from fastest to slowest
 
-O(1): 1 iteration always
+Big-O | Name | Description
+------| ---- | -----------
+**O(1)** | constant | **This is the best.** The algorithm always takes the same amount of time, regardless of how much data there is. Example: looking up an element of an array by its index.
+**O(log n)** | logarithmic | **Pretty great.** These kinds of algorithms halve the amount of data with each iteration. If you have 100 items, it takes about 7 steps to find the answer. With 1,000 items, it takes 10 steps. And 1,000,000 items only take 20 steps. This is super fast even for large amounts of data.
+**O(n)** | linear | **Good performance.** If you have 100 items, this does 100 units of work. This is usually the case for a loop. If you double the size of n, then the algorithm does 2 * n units of work.
+**O(n log n)** | "linearithmic" | **Decent performance.** This is slightly worse than linear but not too bad. Example: the fastest general-purpose sorting algorithms.
+**O(n^2)** | quadratic | **Kinda slow.** If you have 100 items, this does 100^2 = 10,000 units of work. Doubling the number of items makes it four times slower (because 2 squared equals 4). Example: a double for loop.
+**O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication.
+**O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: traveling salesperson problem.
+**O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything.
 
-O(log(n)) : This is a pretty nice big O category. It grows much slower than O(n). For example, binary search on a sorted list takes O(log(n)) time. Note that the base of the logarithm is not included, since all logarithms differ only by a factor of a constant.
-
-O(n): a loop
-
-O(n(log(n))) : sorting algorithms, such as mergesort and quicksort, fall under this category
-
-O(n^2) : a loop within a loop.
-
-O(a^n) : This is a very slow big O category. Usually, a program in this category has n values that each can be any of a values.
-
-O(n!) : This is one of the worst big O categories. Usually, a program in this category works with all permutations of a list.
-
-## Resources
+## Resources used
 
 https://justin.abrah.ms/computer-science/big-o-notation-explained.html
 
-https://brilliant.org/wiki/big-o-notation/
-
-
-## Other Resources not looked at yet
-
 https://github.com/raywenderlich/swift-algorithm-club/blob/master/Big-O%20Notation.markdown
+
+http://stackoverflow.com/questions/17122807/big-o-ologn-code-example
+
+https://www.quora.com/How-would-you-explain-O-log-n-in-algorithms-to-1st-year-undergrad-student
+
+http://stackoverflow.com/questions/9223351/confused-on-big-o-notation?rq=1
+
+## Other Resources
+
+http://www.daveperrett.com/articles/2010/12/07/comp-sci-101-big-o-notation/
+
+http://stackoverflow.com/questions/107165/big-o-for-eight-year-olds?rq=1
+
+http://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly
 
 https://medium.freecodecamp.com/my-first-foray-into-technology-c5b6e83fe8f1#.s488n2g0j
 
