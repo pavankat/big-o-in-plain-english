@@ -107,7 +107,9 @@ function returnItem(item){
 
 returnItem is a pointless function. but bear with me.
 
-```returnItem(2);```
+```
+returnItem(2);
+```
 
 returnItem's Big(O) is constant time. No matter what we pass to returnItem, the algorithm will go through one unit of work.
 
@@ -135,7 +137,9 @@ function itemInList(check, list){
 
 This will run pretty quick:
 
-```itemInList(2, [1,2,3]);```
+```
+itemInList(2, [1,2,3]);
+```
 
 The "complexity" of itemInList is O(n)
 
@@ -232,18 +236,62 @@ k approximately equals log(x)
 ![o(log n)](o_logn.gif)
 
 
-###### Another example of O(log n)
+## O(1) vs O(n) vs O(n^2) explained without code
+
+###### O(1)
+Consider single-digit addition with a pencil and paper. The kind you learned when you were young.
+
 ```
-function lognAgain(n){
-	int count = 0; 
-	int i = n; 
-	while (i > 1){
-	    count++; 
-	    i = i / 2; 
-	}
-	return i;
-}
+5+5 = 10
+
+3+3 = 6
+
+2+2 = 4
+
+2+3 = 5
+
+6+7 = 13
 ```
+
+Each of those different problems took the same # of operations to complete (or the same amount of units of work to complete). You take one number and add it to another. Done.
+
+Because it's always the same units of work to complete, no matter what the problem, the Big O is constant, this is an example of O(1).
+
+###### O(n)
+
+Consider multi-digit addition with a pencil and paper. 
+
+```
+55+72 = 127
+
+455+322= 777
+
+1234+4447= 5681
+
+4999 + 56 = 5055
+```
+
+Notice how the number of operations (or the amount of units of work to complete) goes up as the number of digits go up.
+
+The number of operations directly correlate (are one to one) with the number of digits of the biggest number being added.
+
+This would take worst case O(n) units of work.
+
+###### O(n^2)
+
+Now, consider multi-digit multiplication with pencil and paper.
+
+```
+55538*92338 = 5128267844
+```
+
+This is much harder to do than the previous two asks. 
+
+Each digit of the bottom number has to be multiplied by each digit in the top number.
+
+If you were multiplying 100 digit numbers by each other then it would take 10,000 mathematical operations to complete (units of work to complete).
+
+This would take worst case O(n^2) units of work to complete.
 
 ## How to calculate Big O?
 
@@ -275,14 +323,16 @@ If the amount of data (n) is relatively small, then even a slow algorithm will b
 
 Big-O | Name | Description
 ------| ---- | -----------
-**O(1)** | constant | **This is the best.** The algorithm always takes the same amount of time, regardless of how much data there is. Example: looking up an element of an array by its index.
-**O(log n)** | logarithmic | **Pretty great.** These kinds of algorithms halve the amount of data with each iteration. If you have 100 items, it takes about 7 steps to find the answer. With 1,000 items, it takes 10 steps. And 1,000,000 items only take 20 steps. This is super fast even for large amounts of data.
+**O(1)** | constant | **This is the best.** The algorithm always takes the same amount of time, regardless of how much data there is. In other words, the number of units of work it takes the algorithm to complete is independent of the size of the input. Example: looking up an element of an array by its index.
+**O(log n)** | logarithmic | **Pretty great.** These kinds of algorithms remove a percentage of the amount of data to sift through with each iteration. If you have 100 items, it takes about 7 steps to find the answer. With 1,000 items, it takes 10 steps. And 1,000,000 items only take 20 steps. This is super fast even for large amounts of data. 
 **O(n)** | linear | **Good performance.** If you have 100 items, this does 100 units of work. This is usually the case for a loop. If you double the size of n, then the algorithm does 2 * n units of work.
 **O(n log n)** | "linearithmic" | **Decent performance.** This is slightly worse than linear but not too bad. Example: the fastest general-purpose sorting algorithms.
-**O(n^2)** | quadratic | **Kinda slow.** If you have 100 items, this does 100^2 = 10,000 units of work. Doubling the number of items makes it four times slower (because 2 squared equals 4). Example: a double for loop.
-**O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication.
+**O(n^2)** | quadratic | **Kinda slow.** If you have 100 items, this does 100^2 = 10,000 units of work. Doubling the number of items makes it four times slower (because 2 squared equals 4). Example: a double for loop -> you have to look at every pair of input elements.
+
+**O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication. Or, you're looking at every pair of inputs but the operation you do requires looking at all of the inputs again
+
 **O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: traveling salesperson problem.
-**O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything.
+**O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything. Example: you need to consider every possible subset of your inputs.
 
 ## Resources used
 
@@ -296,11 +346,12 @@ https://www.quora.com/How-would-you-explain-O-log-n-in-algorithms-to-1st-year-un
 
 http://stackoverflow.com/questions/9223351/confused-on-big-o-notation?rq=1
 
+http://stackoverflow.com/questions/107165/big-o-for-eight-year-olds?rq=1
+
+
 ## Other Resources
 
 http://www.daveperrett.com/articles/2010/12/07/comp-sci-101-big-o-notation/
-
-http://stackoverflow.com/questions/107165/big-o-for-eight-year-olds?rq=1
 
 http://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly
 
