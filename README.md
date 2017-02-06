@@ -27,8 +27,10 @@ function countVowels(word){
 ### When are functions not algorithms?
 
 When you write a function it may or may not
-	* have arguments
-	* return a value
+
+* have arguments
+
+* return a value
 
 Functions that don't take arguments or return a value are usually used to dry up repetitive code, print something to the screen or serve as an argument to be executed later
 
