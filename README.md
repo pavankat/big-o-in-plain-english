@@ -5,8 +5,10 @@
 Algorithms are basically functions.
 
 With functions that are algorithms
-	* you take in arguments.
-	* you explicitly return values.
+
+* you take in arguments.
+
+* you explicitly return values.
 
 ###### 1.1 Example of an algorithm
 
