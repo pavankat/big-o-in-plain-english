@@ -1,6 +1,6 @@
 # Algorithms & Big O Notation in Plain English
 
-### What are algorithms? 
+## What are algorithms? 
 
 Algorithms are basically functions.
 
@@ -24,7 +24,7 @@ function countVowels(word){
 
 ```
 
-### When are functions not algorithms?
+## When are functions not algorithms?
 
 When you write a function it may or may not
 
@@ -63,7 +63,7 @@ This function has an argument, but no return
 		}
 ```
 
-### What is Big O?
+## What is Big O?
 
 Big O is short for Big O Notiation.
 
@@ -75,17 +75,17 @@ The math term for the **worst case scenario** is **"upper bound"**.
 
 Example: if I gave an algorithm an array of 1000 items, it would run slower than if I gave the algorithm an array of 10 items.
 
-### How do you say O(n)
+## How do you say O(n)
 
 O(n) reads as "Order of N" or short for "O of N".
 
 the O function is the Order function.
 
-### Why is it called Big O?
+## Why is it called Big O?
 
 Because we're dealing with orders of magnitude.
 
-### Why is Big O important? 
+## Why is Big O important? 
 
 Orders of magnitude are important.
 
