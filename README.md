@@ -10,7 +10,7 @@ With functions that are algorithms
 
 * you explicitly return values.
 
-##### 1.1 Example of an algorithm
+#####g 1.1 Example of an algorithm
 
 algorithm that counts the number of vowels in a word and returns the count.
 
@@ -34,7 +34,7 @@ When you write a function it may or may not
 
 Functions that don't take arguments or return a value are usually used to dry up repetitive code, print something to the screen or serve as an argument to be executed later
 
-##### 1.2 Example of a function that is not an algorithm
+#####g 1.2 Example of a function that is not an algorithm
 
 an anonymous function that gets passed to jQuery's on function. 
 
@@ -44,7 +44,7 @@ an anonymous function that gets passed to jQuery's on function.
 		});
 ```
 
-##### 1.3 Example of a function that is not an algorithm
+#####g 1.3 Example of a function that is not an algorithm
 
 This function has no arguments, no return
 
@@ -53,7 +53,7 @@ This function has no arguments, no return
 			$('#div').html("");
 		}
 ```
-##### 1.4 Example of a function that is not an algorithm
+#####g 1.4 Example of a function that is not an algorithm
 
 This function has an argument, but no return
 
@@ -101,7 +101,7 @@ Another example: Let's say there are 50 gumballs in a gumball machine. You guess
 
 ## Dive into O(1)
 
-##### Example 2.1
+#####g Example 2.1
 
 ```
 function returnItem(item){
@@ -129,7 +129,7 @@ Notice that the further right of the horizontal axis (x axis) you go, the vertic
 
 ## Dive into O(n)
 
-##### Example 2.2
+#####g Example 2.2
 ```
 function itemInList(check, list){
 	for (var i=0; i<list.length; i++){
@@ -199,11 +199,11 @@ This means that O(n^2) runs slower than O(n), which runs slower than O(1).
 
 O(1) < O(n) < O(log(n)) < O(n^2)
 
-##### What does an algorithm look like that has a Big O of O(log(n))?
+#####g What does an algorithm look like that has a Big O of O(log(n))?
 
 The choice of the next element on which to perform some action is one of several possibilities, and only one will need to be chosen.
 
-##### Ex. Looking up people in a phone book is O(log(n))
+#####g Ex. Looking up people in a phone book is O(log(n))
 
 You don't need to check every person in the phone book to find the right one; instead, you can simply divide-and-conquer, and you only need to explore a tiny fraction of the entire space before you eventually find someone's phone number.
 
@@ -239,6 +239,24 @@ k approximately equals log(x)
 
 ![o(log n)](o_logn.gif)
 
+## O(n log n)
+
+to do: convert to JS and add explanation
+
+```
+int result = 0;
+foreach (int num in numbers)
+{
+    int index = numbers.length - 1;
+    while (index > 1)
+    {
+        // yeah, stupid, but couldn't come up with something more useful :-(
+        result += numbers[index];
+        index /= 2;
+    }
+}
+return result;
+```
 
 ## O(1) vs O(n) vs O(n^2) explained without code
 
@@ -335,6 +353,8 @@ Big-O | Name | Description
 **O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication. Or, you're looking at every pair of inputs but the operation you do requires looking at all of the inputs again
 **O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: traveling salesperson problem.
 **O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything. Example: you need to consider every possible subset of your inputs.
+
+![o(n)](most-of-them.png)
 
 ## Resources used
 
