@@ -356,6 +356,16 @@ Big-O | Name | Description
 
 ![o(n)](most-of-them.png)
 
+## another chart
+
+Big-O | computations for 10 things | computations for 100 things
+------| ---- | -----------
+O(1)        |   1                         |     1
+O(log(n))   |   3                         |     7
+O(n)        |  10                         |   100
+O(n log(n)) |  30                         |   700
+O(n^2)      | 100                         | 10000
+
 ## Resources used
 
 https://justin.abrah.ms/computer-science/big-o-notation-explained.html
