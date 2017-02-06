@@ -10,7 +10,7 @@ With functions that are algorithms
 
 * you explicitly return values.
 
-###### 1.1 Example of an algorithm
+##### 1.1 Example of an algorithm
 
 algorithm that counts the number of vowels in a word and returns the count.
 
@@ -34,7 +34,7 @@ When you write a function it may or may not
 
 Functions that don't take arguments or return a value are usually used to dry up repetitive code, print something to the screen or serve as an argument to be executed later
 
-###### 1.2 Example of a function that is not an algorithm
+##### 1.2 Example of a function that is not an algorithm
 
 an anonymous function that gets passed to jQuery's on function. 
 
@@ -44,7 +44,7 @@ an anonymous function that gets passed to jQuery's on function.
 		});
 ```
 
-###### 1.3 Example of a function that is not an algorithm
+##### 1.3 Example of a function that is not an algorithm
 
 This function has no arguments, no return
 
@@ -53,7 +53,7 @@ This function has no arguments, no return
 			$('#div').html("");
 		}
 ```
-###### 1.4 Example of a function that is not an algorithm
+##### 1.4 Example of a function that is not an algorithm
 
 This function has an argument, but no return
 
@@ -101,7 +101,7 @@ Another example: Let's say there are 50 gumballs in a gumball machine. You guess
 
 ## Dive into O(1)
 
-###### Example 2.1
+##### Example 2.1
 
 ```
 function returnItem(item){
@@ -129,7 +129,7 @@ Notice that the further right of the horizontal axis (x axis) you go, the vertic
 
 ## Dive into O(n)
 
-###### Example 2.2
+##### Example 2.2
 ```
 function itemInList(check, list){
 	for (var i=0; i<list.length; i++){
@@ -163,7 +163,7 @@ Notice that the further right of the horizontal axis (x axis) you go, the vertic
 
 ## Dive into O(n^2)
 
-###### Example 2.3
+##### Example 2.3
 ```
 function allCombos(list){
 	var results = [];
@@ -199,17 +199,17 @@ This means that O(n^2) runs slower than O(n), which runs slower than O(1).
 
 O(1) < O(n) < O(log(n)) < O(n^2)
 
-###### What does an algorithm look like that has a Big O of O(log(n))?
+##### What does an algorithm look like that has a Big O of O(log(n))?
 
 The choice of the next element on which to perform some action is one of several possibilities, and only one will need to be chosen.
 
-###### Ex. Looking up people in a phone book is O(log(n))
+##### Ex. Looking up people in a phone book is O(log(n))
 
 You don't need to check every person in the phone book to find the right one; instead, you can simply divide-and-conquer, and you only need to explore a tiny fraction of the entire space before you eventually find someone's phone number.
 
 Of course, a bigger phone book will still take you a longer time, but it won't grow as quickly as the proportional increase in the additional size.
 
-###### Ex. an algorithm that has a Big O of O(log(n))
+##### Ex. an algorithm that has a Big O of O(log(n))
 
 ```
 function logn(x){
@@ -242,7 +242,7 @@ k approximately equals log(x)
 
 ## O(1) vs O(n) vs O(n^2) explained without code
 
-###### O(1)
+##### O(1)
 Consider single-digit addition with a pencil and paper. The kind you learned when you were young.
 
 ```
@@ -261,7 +261,7 @@ Each of those different problems took the same # of operations to complete (or t
 
 Because it's always the same units of work to complete, no matter what the problem, the Big O is constant, this is an example of O(1).
 
-###### O(n)
+##### O(n)
 
 Consider multi-digit addition with a pencil and paper. 
 
@@ -281,7 +281,7 @@ The number of operations directly correlate (are one to one) with the number of 
 
 This would take worst case O(n) units of work.
 
-###### O(n^2)
+##### O(n^2)
 
 Now, consider multi-digit multiplication with pencil and paper.
 
@@ -311,7 +311,7 @@ Three nested loops gives O(n^3), and so on.
 
 Big-O notation is an estimate and is only useful for large values of n. 
 
-###### insertion sort vs merge sort
+##### insertion sort vs merge sort
 
 The worst-case running time for the **insertion sort algorithm is O(n^2)**. 
 
@@ -332,9 +332,7 @@ Big-O | Name | Description
 **O(n)** | linear | **Good performance.** If you have 100 items, this does 100 units of work. This is usually the case for a loop. If you double the size of n, then the algorithm does 2 * n units of work.
 **O(n log n)** | "linearithmic" | **Decent performance.** This is slightly worse than linear but not too bad. Example: the fastest general-purpose sorting algorithms.
 **O(n^2)** | quadratic | **Kinda slow.** If you have 100 items, this does 100^2 = 10,000 units of work. Doubling the number of items makes it four times slower (because 2 squared equals 4). Example: a double for loop -> you have to look at every pair of input elements.
-
 **O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication. Or, you're looking at every pair of inputs but the operation you do requires looking at all of the inputs again
-
 **O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: traveling salesperson problem.
 **O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything. Example: you need to consider every possible subset of your inputs.
 
