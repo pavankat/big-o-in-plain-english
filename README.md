@@ -404,7 +404,7 @@ b)
 function countUpB(n){
 	var count = 0; 
 	for (var i = 1; i <= n; i++) {
-	    for (var j = n; j > 1; j-­--­-) {
+	    for (var j = n; j > 1; j-­­-) {
 	        for (var k = 1; k < 1000; k = k + 2) {
 	            count++;
 	        }
@@ -420,7 +420,7 @@ c)
 function countUpC(n){
 	var count = n; 
 	for (var i = 1; i <= 1000000; i++) {
-	    for (var j = i; j > 500; j-­--­-) {
+	    for (var j = i; j > 500; j-­­-) {
 	        for (var k = 1; k < 10500; k = k + 2) {
 	            count++;
 	        }
