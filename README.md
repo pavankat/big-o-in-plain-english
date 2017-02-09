@@ -187,6 +187,62 @@ This means that O(n^2) runs slower than O(n), which runs slower than O(1).
 
 ![comparison](runtime_comparison.png)
 
+## O(1) vs O(n) vs O(n^2) explained without code
+
+#### O(1)
+Consider single-digit addition with a pencil and paper. The kind you learned when you were young.
+
+```
+5+5 = 10
+
+3+3 = 6
+
+2+2 = 4
+
+2+3 = 5
+
+6+7 = 13
+```
+
+Each of those different problems took the same # of operations to complete (or the same amount of units of work to complete). You take one number and add it to another. Done.
+
+Because it's always the same units of work to complete, no matter what the problem, the Big O is constant, this is an example of O(1).
+
+#### O(n)
+
+Consider multi-digit addition with a pencil and paper. 
+
+```
+55+72 = 127
+
+455+322= 777
+
+1234+4447= 5681
+
+4999 + 56 = 5055
+```
+
+Notice how the number of operations (or the amount of units of work to complete) goes up as the number of digits go up.
+
+The number of operations directly correlate (are one to one) with the number of digits of the biggest number being added.
+
+This would take worst case O(n) units of work.
+
+#### O(n^2)
+
+Now, consider multi-digit multiplication with pencil and paper.
+
+```
+55538*92338 = 5128267844
+```
+
+This is much harder to do than the previous two asks. 
+
+Each digit of the bottom number has to be multiplied by each digit in the top number.
+
+If you were multiplying 100 digit numbers by each other then it would take 10,000 mathematical operations to complete (units of work to complete).
+
+This would take worst case O(n^2) units of work to complete.
 
 ## Dive into O(log(n))
 
@@ -272,64 +328,6 @@ nlogn(4)
 ```
 
 Math explanation: Any algorithm that calculates all permutation of a given array is O(N!).
-
-
-## O(1) vs O(n) vs O(n^2) explained without code
-
-#### O(1)
-Consider single-digit addition with a pencil and paper. The kind you learned when you were young.
-
-```
-5+5 = 10
-
-3+3 = 6
-
-2+2 = 4
-
-2+3 = 5
-
-6+7 = 13
-```
-
-Each of those different problems took the same # of operations to complete (or the same amount of units of work to complete). You take one number and add it to another. Done.
-
-Because it's always the same units of work to complete, no matter what the problem, the Big O is constant, this is an example of O(1).
-
-#### O(n)
-
-Consider multi-digit addition with a pencil and paper. 
-
-```
-55+72 = 127
-
-455+322= 777
-
-1234+4447= 5681
-
-4999 + 56 = 5055
-```
-
-Notice how the number of operations (or the amount of units of work to complete) goes up as the number of digits go up.
-
-The number of operations directly correlate (are one to one) with the number of digits of the biggest number being added.
-
-This would take worst case O(n) units of work.
-
-#### O(n^2)
-
-Now, consider multi-digit multiplication with pencil and paper.
-
-```
-55538*92338 = 5128267844
-```
-
-This is much harder to do than the previous two asks. 
-
-Each digit of the bottom number has to be multiplied by each digit in the top number.
-
-If you were multiplying 100 digit numbers by each other then it would take 10,000 mathematical operations to complete (units of work to complete).
-
-This would take worst case O(n^2) units of work to complete.
 
 ## Big O can be misleading
 
