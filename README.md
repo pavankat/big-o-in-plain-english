@@ -213,6 +213,14 @@ function logn(x){
 
 ##### Calculating the Big O of algorithm above
 
+**without math**
+
+Often you don't need math to figure out what the Big-O of an algorithm is. You can simply use your intuition. 
+
+you look at how many units of work the algorithm has to do as the input grows and match that up to the correct Big O.
+
+**with math** 
+
 Iteration |   x
 ----------|--------
     0     |  x (this is the same thing as x/1)
@@ -322,16 +330,6 @@ Each digit of the bottom number has to be multiplied by each digit in the top nu
 If you were multiplying 100 digit numbers by each other then it would take 10,000 mathematical operations to complete (units of work to complete).
 
 This would take worst case O(n^2) units of work to complete.
-
-## How to calculate Big O?
-
-Often you don't need math to figure out what the Big-O of an algorithm is but you can simply use your intuition. 
-
-If your code uses a single loop that looks at all n elements of your input, the algorithm is O(n). 
-
-If the code has two nested loops, it is O(n^2).
-
-Three nested loops gives O(n^3), and so on.
 
 ## Big O can be misleading
 
