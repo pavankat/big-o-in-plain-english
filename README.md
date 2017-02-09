@@ -192,6 +192,8 @@ This means that O(n^2) runs slower than O(n), which runs slower than O(1).
 
 O(1) < O(n) < O(log(n)) < O(n^2)
 
+![o(log n)](o_logn.gif)
+
 #### What does an algorithm look like that has a Big O of O(log(n))?
 
 The choice of the next element on which to perform some action is one of several possibilities, and only one will need to be chosen.
@@ -239,8 +241,6 @@ k*log(2) = log(x)
 k = log(x)/log(2)
 
 k approximately equals log(x)
-
-![o(log n)](o_logn.gif)
 
 ## Dive into O(n log n)
 
