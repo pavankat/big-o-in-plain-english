@@ -218,6 +218,8 @@ function logn(x){
 }
 ```
 
+##### Calculating the Big O of algorithm above
+
 Iteration |   x
 ----------|--------
     0     |  x (this is the same thing as x/1)
@@ -239,23 +241,33 @@ k approximately equals log(x)
 
 ![o(log n)](o_logn.gif)
 
-## O(n log n)
+## Dive into O(n log n)
 
-to do: convert to JS and add explanation
+O(1) < O(log(n)) < O(n) < O(n log(n))	< O(n^2)
 
 ```
-int result = 0;
-foreach (int num in numbers)
-{
-    int index = numbers.length - 1;
-    while (index > 1)
-    {
-        // yeah, stupid, but couldn't come up with something more useful :-(
-        result += numbers[index];
-        index /= 2;
-    }
+//assume that n is an integer
+function nlogn(n){
+	var results = [];
+	for(var i = 0; i < n; i++){ //this loop is executed n times, so O(n)
+	    for(var j = n; j > 0; j = parseInt(j/2)){ //this loop is executed O(log n) times
+	    	results.push(j);
+	    }
+	}
+	return results;
 }
-return result;
+```
+
+This would result in 
+
+```
+nlogn(3)
+[3, 1, 3, 1, 3, 1]
+```
+
+```
+nlogn(4)
+[4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1]
 ```
 
 ## O(1) vs O(n) vs O(n^2) explained without code
@@ -366,20 +378,141 @@ O(n)        |  10                         |   100
 O(n log(n)) |  30                         |   700
 O(n^2)      | 100                         | 10000
 
+## Pop Quiz
+
+What's the Big O of each of these algorithms?
+
+a)
+
+```
+function countUpA(n){
+	var count = 0; 
+    for (var i = 1; i <= n; i++) {
+        for (var j = n; j > 1; j-­-) {
+            for (var k = 1; k < n; k = k + 2) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+```
+
+b)
+```
+function countUpB(n){
+	var count = 0; 
+	for (var i = 1; i <= n; i++) {
+	    for (var j = n; j > 1; j-­--­-) {
+	        for (var k = 1; k < 1000; k = k + 2) {
+	            count++;
+	        }
+	    }
+	}
+	return count;
+}
+
+```
+
+c)
+```
+function countUpC(n){
+	var count = n; 
+	for (var i = 1; i <= 1000000; i++) {
+	    for (var j = i; j > 500; j-­--­-) {
+	        for (var k = 1; k < 10500; k = k + 2) {
+	            count++;
+	        }
+	    }
+	}
+
+	return count;
+}
+
+```
+d)
+
+```
+function countUp(n){
+	var count = 0; 
+	var j = 1; 
+	for (var i = 1; i < n; i++) { 
+        while (j < n) { 
+            j++;
+            count++; 
+        } 
+        j = 1; 
+	}
+	return count;
+}
+
+```
+
+e)
+
+```
+function countUpE(n){
+	var count = 0; 
+	var i = n; 
+	while (i > 1){
+	    count++; 
+	    i = i / 2; 
+	}
+	return count;
+}
+
+```
+
+
+
+
+
+
+
+
+## Answers to Quiz
+
+a) O(n^3)
+
+triple for loops, as the input grows, the units of work grows at a cubic pace.
+
+b) O(n^2)
+
+triple for loops, but only 2 of the for loops increase the units of work respect to the input
+
+c) O(1)
+
+as the input grows, the units of work always stays the same
+
+d) O(n^2)
+
+as the input grows, the units of work increase at a quadratic pace
+
+e) O(log n)
+
+as the input grows the units of work go up but not at a linear or quadratic pace.
+
+
+
+
+
 ## Resources used
 
+Explanations:
 https://justin.abrah.ms/computer-science/big-o-notation-explained.html
-
-https://github.com/raywenderlich/swift-algorithm-club/blob/master/Big-O%20Notation.markdown
-
-http://stackoverflow.com/questions/17122807/big-o-ologn-code-example
-
-https://www.quora.com/How-would-you-explain-O-log-n-in-algorithms-to-1st-year-undergrad-student
-
-http://stackoverflow.com/questions/9223351/confused-on-big-o-notation?rq=1
-
 http://stackoverflow.com/questions/107165/big-o-for-eight-year-olds?rq=1
 
+Example Code Samples reworked from here:
+http://stackoverflow.com/questions/17122807/big-o-ologn-code-example
+http://stackoverflow.com/questions/19021150/big-oh-for-n-log-n
+
+Chart/Graphics Used:
+https://github.com/raywenderlich/swift-algorithm-club/blob/master/Big-O%20Notation.markdown
+https://www.quora.com/How-would-you-explain-O-log-n-in-algorithms-to-1st-year-undergrad-student
+
+Pop Quiz:
+http://stackoverflow.com/questions/9223351/confused-on-big-o-notation?rq=1
 
 ## Other Resources
 
