@@ -87,17 +87,10 @@ Because we're dealing with orders of magnitude.
 
 ## Why is Big O important? 
 
-Orders of magnitude are important.
-
-Imagine you're buying a car and you have two options.
-
-a super car that costs $100k and a sedan that costs $10k.
-
-The cost difference between the super car and the sedan is pretty huge 
-
-BUT in approximation, as long as you're within an order of magnitude, you're pretty close. 
-
-Another example: Let's say there are 50 gumballs in a gumball machine. You guess 500. That's pretty off, but in approximation you're not that off. If you guessed 5000 then you'd be way off.
+Understanding the Big O of algorithms will 
+* get you into the mindset of coding for efficiency. Ex: "I have to change this algorithm because it's O(n!)!"
+* help you talk code to other developers. Ex: "Don't worry, I changed up the algorithm so it goes from O(n^2) to O(n)."
+* help you for interviews. You will be able to talk about efficiency of algorithms that you white board. Ex: "What I just coded out is O(n^2)."
 
 ## Dive into O(1)
 
@@ -270,6 +263,9 @@ nlogn(4)
 [4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1]
 ```
 
+Math explanation: Any algorithm that calculates all permutation of a given array is O(N!).
+
+
 ## O(1) vs O(n) vs O(n^2) explained without code
 
 #### O(1)
@@ -377,6 +373,18 @@ O(log(n))   |   3                         |     7
 O(n)        |  10                         |   100
 O(n log(n)) |  30                         |   700
 O(n^2)      | 100                         | 10000
+O(n^3)      | 1000                         | 1000000
+O(2^n)      | 1024                         | 2^100
+
+Big-O	Operations for 10 “things”	Operations for 100 “things”
+O(1)	1	1
+O(log n)	3	7
+O(n)	10	100
+O(n log n)	30	700
+O(n^2)	100	10000
+O(2^n)	1024	2^100
+O(n!)	3628800	100!
+
 
 ## Pop Quiz
 
