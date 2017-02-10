@@ -371,15 +371,7 @@ O(n log(n)) |  30                         |   700
 O(n^2)      | 100                         | 10000
 O(n^3)      | 1000                         | 1000000
 O(2^n)      | 1024                         | 2^100
-
-Big-O	Operations for 10 “things”	Operations for 100 “things”
-O(1)	1	1
-O(log n)	3	7
-O(n)	10	100
-O(n log n)	30	700
-O(n^2)	100	10000
-O(2^n)	1024	2^100
-O(n!)	3628800	100!
+O(n!)      | 3628800                         | 100! (100*99*98...)	
 
 
 ## Pop Quiz
