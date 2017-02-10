@@ -325,17 +325,51 @@ nlogn(4)
 [4, 2, 1, 4, 2, 1, 4, 2, 1, 4, 2, 1]
 ```
 
-Math explanation: Any algorithm that calculates all permutation of a given array is O(N!).
-
 ## Dive into O(2^n)
 
-algorithms with a Big O of 2^n are often recursive.
+algorithms with a Big O of 2^n are usually recursive.
 
 ```
 //assume number is an integer
 function fib(number) {
  if (number <= 1) return number;
  return fib(number - 2) + fib(number - 1);
+}
+```
+
+## Dive into O(n!)
+
+Any algorithm that calculates all permutation of a given array is O(N!).
+
+Imagine you have an array of words, and you want to return all possible combinations of those words.
+
+So given 
+```
+['apple', 'bear', 'limp bizkit']
+```
+
+The algorithm would return an array of 6 arrays. Like this:
+
+[
+	['apple', 'bear', 'limp bizkit'],
+	['apple', 'limp bizkit', 'bear'],
+	['bear', 'limp bizkit', 'apple'],
+	['bear', 'apple', 'limp bizkit'],
+	['limp bizkit', 'bear', 'apple'],
+	['limp bizkit', 'apple', 'bear'],
+]
+
+Writing an algorithm that would do that would be O(n!)
+
+
+Another example:
+
+```
+//assume n is an integer
+function nFactorial(n) {
+  for(i=0; i<n; i++) {
+    return nFactorial(n-1);
+  }
 }
 ```
 
