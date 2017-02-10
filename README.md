@@ -87,7 +87,7 @@ Because we're dealing with orders of magnitude.
 
 Understanding the Big O of algorithms will 
 * get you into the mindset of coding for efficiency. Ex: "I have to change this algorithm because it's O(n!)!"
-* help you talk code to other developers. Ex: "Don't worry, I changed up the algorithm so it goes from O(n^2) to O(n)."
+* help you talk code to other developers. Ex: "Don't worry, I changed up the algorithm so it not O(n^2). It's O(n) now."
 * help you for interviews. You will be able to talk about efficiency of algorithms that you white board. Ex: "What I just coded out is O(n^2)."
 
 ## Dive into O(1)
