@@ -356,7 +356,7 @@ Big-O | Name | Description
 **O(n^2)** | quadratic | **Kinda slow.** If you have 100 items, this does 100^2 = 10,000 units of work. Doubling the number of items makes it four times slower (because 2 squared equals 4). Example: a double for loop -> you have to look at every pair of input elements.
 **O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication. Or, you're looking at every pair of inputs but the operation you do requires looking at all of the inputs again
 **O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: traveling salesperson problem.
-**O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything. Example: you need to consider every possible subset of your inputs.
+**O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything. Example: you need to consider every possible subset of your inputs. Check out the traveling salesperson problem.
 
 ![o(n)](most-of-them.png)
 
@@ -371,7 +371,7 @@ O(n log(n)) |  30                         |   700
 O(n^2)      | 100                         | 10000
 O(n^3)      | 1000                         | 1000000
 O(2^n)      | 1024                         | 2^100
-O(n!)      | 3628800                         | 100! (100*99*98...)	
+O(n!)      | 3628800                         | 100! -> mathematically this is the product of (100 * 99 * 98...)
 
 
 ## Pop Quiz
@@ -506,24 +506,7 @@ http://stackoverflow.com/questions/19021150/big-oh-for-n-log-n
 Chart/Graphics Used:
 https://github.com/raywenderlich/swift-algorithm-club/blob/master/Big-O%20Notation.markdown
 https://www.quora.com/How-would-you-explain-O-log-n-in-algorithms-to-1st-year-undergrad-student
+http://www.daveperrett.com/articles/2010/12/07/comp-sci-101-big-o-notation/
 
 Pop Quiz:
 http://stackoverflow.com/questions/9223351/confused-on-big-o-notation?rq=1
-
-## Other Resources
-
-http://www.daveperrett.com/articles/2010/12/07/comp-sci-101-big-o-notation/
-
-http://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly
-
-https://medium.freecodecamp.com/my-first-foray-into-technology-c5b6e83fe8f1#.s488n2g0j
-
-https://medium.freecodecamp.com/time-is-complex-but-priceless-f0abd015063c#.x22db1a69
-
-http://adrianmejia.com/blog/2014/02/13/algorithms-for-dummies-part-1-sorting/
-
-http://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation
-
-http://bigocheatsheet.com/
-
-https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/
