@@ -67,13 +67,11 @@ This function has an argument, but no return
 
 Big O is short for Big O Notiation.
 
-Big O is how programmers talk about algorithms.
+Big O is how programmers talk about scalability of algorithms.
 
 An algorithm's Big O Notation is determined by how long the algorithm takes to return output in the **worst case scenario**.
 
 The math term for the **worst case scenario** is **"upper bound"**.
-
-Example: if I gave an algorithm an array of 1000 items, it would run slower than if I gave the algorithm an array of 10 items.
 
 ## How do you say O(n)
 
@@ -329,6 +327,18 @@ nlogn(4)
 
 Math explanation: Any algorithm that calculates all permutation of a given array is O(N!).
 
+## Dive into O(2^n)
+
+algorithms with a Big O of 2^n are often recursive.
+
+```
+//assume number is an integer
+function fib(number) {
+ if (number <= 1) return number;
+ return fib(number - 2) + fib(number - 1);
+}
+```
+
 ## Big O can be misleading
 
 Big-O notation is an estimate and is only useful for large values of n. 
@@ -355,7 +365,7 @@ Big-O | Name | Description
 **O(n log n)** | "linearithmic" | **Decent performance.** This is slightly worse than linear but not too bad. Example: the fastest general-purpose sorting algorithms.
 **O(n^2)** | quadratic | **Kinda slow.** If you have 100 items, this does 100^2 = 10,000 units of work. Doubling the number of items makes it four times slower (because 2 squared equals 4). Example: a double for loop -> you have to look at every pair of input elements.
 **O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication. Or, you're looking at every pair of inputs but the operation you do requires looking at all of the inputs again
-**O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: traveling salesperson problem.
+**O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: solving the traveling salesperson problem with brute force.
 **O(n!)** | factorial | **Intolerably slow.** It literally takes a million years to do anything. Example: you need to consider every possible subset of your inputs. Check out the traveling salesperson problem.
 
 ![o(n)](most-of-them.png)
