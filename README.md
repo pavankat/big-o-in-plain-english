@@ -1,6 +1,6 @@
 # Algorithms & Big O Notation in Plain English
 
-## What are algorithms? 
+## What are algorithms?
 
 Algorithms are basically functions.
 
@@ -13,12 +13,19 @@ Functions that are algorithms:
 #### 1.1 Example of an algorithm
 
 Algorithm that counts the number of vowels in a word and returns the count:
+
 ```js
-function countVowels(word){
-	var vowels = ['a', 'i', 'e', 'o', 'u'];
-	var count = 0;
-	for (var i = 0; i < word.length; i++){ count++; }
-	return count;
+function countVowels(word) {
+    var vowels = ['a', 'i', 'e', 'o', 'u'];
+    var count = 0;
+		for (var i = 0; i < word.length; i++) {
+        for (var j = 0; j < vowels.length; j++) {
+            if (word[i] === vowels[j]) {
+                count++;
+            }
+        }
+    }
+    return count;
 }
 
 ```
@@ -34,13 +41,12 @@ Functions that don't take arguments or return a value are usually used to dry up
 
 #### 1.2 Example of a function that is not an algorithm
 
-An anonymous function that gets passed to jQuery's on function. 
+An anonymous function that gets passed to jQuery's `on` function. 
 
 ```js
 $('button').on('click', function(){ 
 	alert('hi') 
 });
-```
 
 #### 1.3 Example of a function that is not an algorithm
 
@@ -81,9 +87,9 @@ The O function is the Order function.
 
 Because we're dealing with orders of magnitude. `O` is used because the growth rate of a function is also referred to as the **"order of the function"**.
 
-## Why is Big O important? 
+## Why is Big O important?
 
-Understanding the Big O of algorithms will 
+Understanding the Big O of algorithms will
 * get you into the mindset of coding for efficiency. Ex: "I have to change this algorithm because it's O(n!)!"
 * help you talk code to other developers. Ex: "Don't worry, I changed up the algorithm so it not O(n^2). It's O(n) now."
 * help you for interviews. You will be able to talk about efficiency of algorithms that you whiteboard. Ex: "What I just coded out is O(n^2)."
@@ -206,7 +212,7 @@ Because it's always the same units of work to complete, no matter what the probl
 
 #### O(n)
 
-Consider multi-digit addition with a pencil and paper. 
+Consider multi-digit addition with a pencil and paper.
 
 ```
 55 + 72 = 127
@@ -232,7 +238,7 @@ Now, consider multi-digit multiplication with pencil and paper.
 55538 * 92338 = 5128267844
 ```
 
-This is much harder to do than the previous two asks. 
+This is much harder to do than the previous two asks.
 
 Each digit of the bottom number has to be multiplied by each digit in the top number.
 
@@ -273,7 +279,7 @@ function twoDivides(x){
 
 **without math**
 
-Often you don't need math to figure out what the Big-O of an algorithm is. You can simply use your intuition. 
+Often you don't need math to figure out what the Big-O of an algorithm is. You can simply use your intuition.
 
 You look at how many units of work the algorithm has to do as the input grows and match that up to the correct Big O.
 
@@ -385,7 +391,7 @@ Any algorithm that calculates all permutations of a given array is `O(n!)`. Fact
 
 Imagine you have an array of words, and you want to return all possible combinations of those words.
 
-So given 
+So given
 ```
 ['apple', 'bear', 'limp bizkit']
 ```
@@ -420,13 +426,13 @@ This runs the `nFactorial` function `n-1` times for an input `n`. So, you get `n
 
 ## Big O can be misleading
 
-Big-O notation is an estimate and is only useful for large values of n. 
+Big-O notation is an estimate and is only useful for large values of n.
 
 #### insertion sort vs merge sort
 
-The worst-case running time for the **insertion sort algorithm is O(n^2)**. 
+The worst-case running time for the **insertion sort algorithm is O(n^2)**.
 
-Relative to Big O that is worse than the running time for **merge sort, which is O(n log n)**. 
+Relative to Big O that is worse than the running time for **merge sort, which is O(n log n)**.
 
 But for small amounts of data (when n is small), insertion sort is actually faster, especially if the array is partially sorted already!
 
@@ -445,7 +451,7 @@ Big-O | Name | Description
 **O(1)** | constant | **This is the best.** The algorithm always takes the same amount of time, regardless of how much data there is. In other words, the number of units of work it takes the algorithm to complete is independent of the size of the input. Example: looking up an element of an array by its index.
 **O(log n)** | logarithmic | **Pretty great.** These kinds of algorithms remove a percentage of the amount of data to sift through with each iteration. If you have 100 items, it takes about 7 steps to find the answer. With 1,000 items, it takes 10 steps. And 1,000,000 items only take 20 steps. This is super fast even for large amounts of data. Example: binary search (sorted array search).
 **O(n)** | linear | **Good performance.** If you have 100 items, this does 100 units of work. This is usually the case for a loop. If you double the size of n, then the algorithm does 2 * n units of work. Example: unsorted array search.
-**O(n log n)** | "linearithmic" | **Decent performance.** This is slightly worse than linear but not too bad. Example: mergesort and other sorting algorithms.
+**O(n log n)** | "linearithmic" | **Decent performance.** This is slightly worse than linear but not too bad. Example: mergesort and other "fast" sorting algorithms.
 **O(n^2)** | quadratic | **Kinda slow.** If you have 100 items, this does 100^2 = 10,000 units of work. Doubling the number of items makes it four times slower (because 2 squared equals 4). Example: a double for loop -> you have to look at every pair of input elements.
 **O(n^3)** | cubic | **Poor performance.** If you have 100 items, this does 100^3 = 1,000,000 units of work. Doubling the input size makes it eight times slower. Example: matrix multiplication. Or, you're looking at every pair of inputs but the operation you do requires looking at all of the inputs again
 **O(2^n)** | exponential | **Very poor performance.** You want to avoid these kinds of algorithms, but sometimes you have no choice. Adding just one bit to the input doubles the running time. Example: brute-force guessing results of a sequence of `n` coin flips.
@@ -486,7 +492,7 @@ a)
 
 ```js
 function countUpA(n){
-	var count = 0; 
+	var count = 0;
     for (var i = 1; i <= n; i++) {
         for (var j = n; j > 1; j--) {
             for (var k = 1; k < n; k = k + 2) {
@@ -502,7 +508,7 @@ function countUpA(n){
 b)
 ```js
 function countUpB(n){
-	var count = 0; 
+	var count = 0;
 	for (var i = 1; i <= n; i++) {
 	    for (var j = n; j > 1; j--) {
 	        for (var k = 1; k < 1000; k = k + 2) {
@@ -518,7 +524,7 @@ function countUpB(n){
 c)
 ```js
 function countUpC(n){
-	var count = n; 
+	var count = n;
 	for (var i = 1; i <= 1000000; i++) {
 	    for (var j = i; j > 500; j--) {
 	        for (var k = 1; k < 10500; k = k + 2) {
@@ -535,14 +541,14 @@ d)
 
 ```js
 function countUp(n){
-	var count = 0; 
-	var j = 1; 
-	for (var i = 1; i < n; i++) { 
-        while (j < n) { 
+	var count = 0;
+	var j = 1;
+	for (var i = 1; i < n; i++) {
+        while (j < n) {
             j++;
-            count++; 
-        } 
-        j = 1; 
+            count++;
+        }
+        j = 1;
 	}
 	return count;
 }
@@ -553,11 +559,11 @@ e)
 
 ```js
 function countUpE(n){
-	var count = 0; 
-	var i = n; 
+	var count = 0;
+	var i = n;
 	while (i > 1){
-	    count++; 
-	    i = i / 2; 
+	    count++;
+	    i = i / 2;
 	}
 	return count;
 }
