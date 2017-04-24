@@ -47,6 +47,7 @@ An anonymous function that gets passed to jQuery's `on` function.
 $('button').on('click', function(){ 
 	alert('hi') 
 });
+```
 
 #### 1.3 Example of a function that is not an algorithm
 
@@ -315,7 +316,6 @@ Iteration |   x
 0         |  x (this is the same thing as x/1)
 1         |  x/2
 2         |  x/4
-...       |  ...
 ...       |  ...
 k         |  x/2^k 
 
