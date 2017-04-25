@@ -250,7 +250,7 @@ This would take worst case O(n^2) units of work to complete.
 
 ## Dive into O(log(n))
 
-O(1) < O(n) < O(log(n)) < O(n^2)
+O(1) < O(log(n)) < O(n) < O(n^2)
 
 ![o(log n)](o_logn.gif)
 
