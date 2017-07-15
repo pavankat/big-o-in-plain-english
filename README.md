@@ -95,6 +95,16 @@ Understanding the Big O of algorithms will
 * help you talk code to other developers. Ex: "Don't worry, I changed up the algorithm so it not O(n^2). It's O(n) now."
 * help you for interviews. You will be able to talk about efficiency of algorithms that you whiteboard. Ex: "What I just coded out is O(n^2)."
 
+## Big O Summarized
+
+Big-O notation  |  Name(in English) |                  Notes                  |           Examples
+----------------|-------------------|-----------------------------------------|--------------------------------
+O(C), O(1) these are equivalent      |   Constant time   |This opperation's steps are independent of the number of inputs              |def getLastElement(list): return list.pop()
+O(log(n))       |    Logarithmic time    |The operation's steps decreases logarithmically with respect to the input size.  If you had a sorted list you could do perform binary search.  It eliminates half the posibilities with each step successive step. | Binary Search: https://goo.gl/SSYGFN https://goo.gl/337Ux5
+O(N)|Linear time| The operation's steps increase linearly with respect to the input size|def double(list): for i, el in enumerate(list): list[i] = el * 2 nums = [1, 2, 3] double(nums) print(nums)
+
+------------------------------------------------------------------------
+
 ## Dive into O(1)
 
 #### Example 2.1
