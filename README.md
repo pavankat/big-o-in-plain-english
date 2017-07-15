@@ -99,23 +99,9 @@ Understanding the Big O of algorithms will
 
 Big-O notation  |  Name(in English) |                  Notes                  |           Examples
 ----------------|-------------------|-----------------------------------------|--------------------------------
-O(C), O(1)      |   Constant time   |This opperation's steps are              |def getLastElement(list):
-these are       |                   |independent of the number of inputs      |  return list.pop()
-equivalent      |                   |                                         |
-----------------|-------------------|-----------------------------------------|--------------------------------
-O(log(n))       |    Logarithmic    |The operation's steps decreases          |Binary Search: Successively
-                |    time           |logarithmically with respect to the      |eliminates half the
-                |                   |input size.  If you had a sorted list    |posibilities with each step
-                |                   |you could do perform binary search.  It  |https://goo.gl/SSYGFN
-                |                   |eliminates half the posibilities         |https://goo.gl/337Ux5
-                |                   |with each step successive step.          |
-----------------|-------------------|-----------------------------------------|--------------------------------
-O(N)            |    Linear time    | The operation's steps increase linearly |def double(list):
-                |                   | with respect to the input size          |  for i, el in enumerate(list):
-                |                   |                                         |    list[i] = el * 2
-                |                   |                                         |nums = [1, 2, 3]
-                |                   |                                         |double(nums)
-                |                   |                                         |print(nums)
+O(C), O(1) these are equivalent      |   Constant time   |This opperation's steps are independent of the number of inputs              |def getLastElement(list): return list.pop()
+O(log(n))       |    Logarithmic time    |The operation's steps decreases logarithmically with respect to the input size.  If you had a sorted list you could do perform binary search.  It eliminates half the posibilities with each step successive step. | Binary Search: https://goo.gl/SSYGFN https://goo.gl/337Ux5
+O(N)|Linear time| The operation's steps increase linearly with respect to the input size|def double(list): for i, el in enumerate(list): list[i] = el * 2 nums = [1, 2, 3] double(nums) print(nums)
 
 line 303
 n    |  operations
