@@ -95,6 +95,41 @@ Understanding the Big O of algorithms will
 * help you talk code to other developers. Ex: "Don't worry, I changed up the algorithm so it not O(n^2). It's O(n) now."
 * help you for interviews. You will be able to talk about efficiency of algorithms that you whiteboard. Ex: "What I just coded out is O(n^2)."
 
+## Big O Summarized
+
+Big-O notation  |  Name(in English) |                  Notes                  |           Examples
+----------------|-------------------|-----------------------------------------|--------------------------------
+O(C), O(1)      |   Constant time   |This opperation's steps are              |def getLastElement(list):
+these are       |                   |independent of the number of inputs      |  return list.pop()
+equivalent      |                   |                                         |
+----------------|-------------------|-----------------------------------------|--------------------------------
+O(log(n))       |    Logarithmic    |The operation's steps decreases          |Binary Search: Successively
+                |    time           |logarithmically with respect to the      |eliminates half the
+                |                   |input size.  If you had a sorted list    |posibilities with each step
+                |                   |you could do perform binary search.  It  |https://goo.gl/SSYGFN
+                |                   |eliminates half the posibilities         |https://goo.gl/337Ux5
+                |                   |with each step successive step.          |
+----------------|-------------------|-----------------------------------------|--------------------------------
+O(N)            |    Linear time    | The operation's steps increase linearly |def double(list):
+                |                   | with respect to the input size          |  for i, el in enumerate(list):
+                |                   |                                         |    list[i] = el * 2
+                |                   |                                         |nums = [1, 2, 3]
+                |                   |                                         |double(nums)
+                |                   |                                         |print(nums)
+
+line 303
+n    |  operations
+-----|---------------
+2    |  2
+4    |  4
+8    |  6
+16   |  8
+32   |  10
+...  | ...
+n    | 2 * log(n)
+
+------------------------------------------------------------------------
+
 ## Dive into O(1)
 
 #### Example 2.1
