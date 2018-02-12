@@ -1,5 +1,14 @@
 # Algorithms & Big O Notation in Plain English
 
+by Pavan Katepalli
+
+Edited by 
+
+[Nick Bartlett](https://github.com/tteltrab)
+
+[Nick West](https://github.com/njwest)
+
+
 ## What are algorithms?
 
 Algorithms are basically functions.
