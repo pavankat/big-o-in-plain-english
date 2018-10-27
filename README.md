@@ -132,6 +132,8 @@ If you want to graph `O(1)` then you would set y equal to 1 and graph it.
 
 Notice that the further right of the horizontal axis (x axis) you go, the vertical axis (y axis) stays the same.
 
+The y-axis represents the number of steps of the function and the x-axis represents how large the input is. For functions of O(1) no matter what the input is, the number of steps the function takes remains 1.
+
 ## Dive into O(n)
 
 #### Example 2.2
